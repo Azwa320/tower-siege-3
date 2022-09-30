@@ -1,28 +1,31 @@
 const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
+const Body= Matter.Body;
 const Constraint = Matter.Constraint;
 
 var engine, world;
-var box1,box2,box3,box5,box6,box7,box8
-var backgroundImg,platform;
-var box, slingShot;
-var score=0;
-var polygon;
+var ground, mini6, mini62
+
+var block1,block2block3,bck4block5block6,block7,block8,block9,block10,block11,block12,block13,block14,block15,block16
+var block17,block18,block19,block20,block21,block22,block23,block24,block25
+var hexa_image, hexa
+var chain 
 
 function preload() {
     backgroundImg = loadImage("sprites/bg.png");
-    polygon= loadImage("polygon.png");
+    hexa_image=loadImage("polygon.png")
 }
 
 function setup(){
-    var canvas = createCanvas(1200,400);
+    var canvas = createCanvas(800,600);
     engine = Engine.create();
     world = engine.world;
 
 
-    ground = new Ground(600,height,1200,20);
-    platform = new Ground(150, 305, 300, 170);
+    ground = new Ground(400,500,1000,20);
+    mini6= new Ground(640,250,220,20);
+    mini62= new Ground(330,450,250,20);
 
     polygon= Bodies.circle(50,200,20);
     World.add(world,polygon);
@@ -33,18 +36,19 @@ function setup(){
     Image(polygon_img,polygon.position.x,polygon.position.y,40,40)
     
     //level 1//
-    box1 = new Box(330,235,30,40);
-    box2 = new Box(360,235,30,40);
-    box3 = new Box(390,235,30,40);
-    box4 = new Box(420,235,30,40);
-    box5 = new Box(450,235,30,40);
-
-    //level 2//
-    box6 = new Box(360,195,30,40);
-    box7 = new Box(390,195,30,40);
-    box8 = new Box(420,195,30,40);
-
-    //level 3//
+    block1= new Block(240,425,30,30);
+    block2=new Block(240,425,30,30);
+    block3=new Block(240,425,30,30);
+    block4=new Block(240,425,30,30);
+    block5=new Block(240,425,30,30);
+    block6=new Block(240,425,30,30);
+    block7=new Block(240,425,30,30);
+    
+    block8=new Block(240,425,30,30);
+    block9=new Block(240,425,30,30);
+    block10=new Block(240,425,30,30)
+    block11=new Block(240,425,30,30);
+   
     box3 = new Box(390,155,30,40);
     
     
